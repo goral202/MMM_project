@@ -9,11 +9,16 @@ def click_action():
         k = int (vkat_wystrzalu.get())
         rad = float ((k/180)*math.pi)
         v = int (vpredkosc_pocz.get())
+        
+        vx = v* math.cos(rad)
+        vy = v* math.sin(rad)
         print(m)
         print(b)
         print(k)
         print(rad)
         print(v)
+        print(vx)
+        print(vy)
         print("Wow!")
     else:
         vmasa.delete(0, END)
