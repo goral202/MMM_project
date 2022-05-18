@@ -1,15 +1,18 @@
 ﻿from tkinter import *
 from tkinter import messagebox
+import math
 
 def click_action():
     if vmasa.get().isnumeric() == TRUE and vopor_powietrza.get().isnumeric() == TRUE and vkat_wystrzalu.get().isnumeric() == TRUE and vpredkosc_pocz.get().isnumeric() == TRUE :
         m = int (vmasa.get())
         b = int (vopor_powietrza.get())
         k = int (vkat_wystrzalu.get())
+        rad = float ((k/180)*math.pi)
         v = int (vpredkosc_pocz.get())
         print(m)
         print(b)
         print(k)
+        print(rad)
         print(v)
         print("Wow!")
     else:
@@ -22,7 +25,7 @@ def click_action():
         vpredkosc_pocz.delete(0, END)
         vpredkosc_pocz.insert(END, '0')
         messagebox.showerror('Informacja', 'Źle wprowadzone dane')
-        print("LOLW!")
+        print("LOL!")
 
 
 
@@ -32,7 +35,7 @@ root.title("MMM")
 root.geometry("900x800")
 text_label = Label(root, font=10, text="Wprowadź parametry")
 masa = Label(root, font=40, text="Masa  [kg]")
-opor_powietrza = Label(root, font=40, text="Opór powietrza")
+opor_powietrza = Label(root, font=40, text="Opór powietrza [N]")
 kat_wystrzalu = Label(root, font=40, text="Kąt wystrzału [°]")
 predkosc_pocz = Label(root, font=40, text="Prędkość początkowa [m/s]")
 text_label.pack()
